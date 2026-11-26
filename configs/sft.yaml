@@ -1,0 +1,19 @@
+model: /workspace/ReAGround/models/FastVLM-0.5B
+data: /workspace/ReAGround/data/outputs/train_direct.jsonl
+image_root: /workspace/ReAGround
+output: /workspace/RyGround_Flash/outputs/direct_lora
+
+max_side: 2048
+min_side: 1024
+dtype: bf16
+train_projector: false
+
+lora: {r: 8, alpha: 16, dropout: 0.05}
+lr: 2.0e-4
+epochs: 1
+batch_size: 1
+grad_accum: 48
+num_workers: 2
+seed: 42
+logging_steps: 5
+save_steps: 200
